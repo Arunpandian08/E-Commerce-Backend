@@ -28,7 +28,7 @@ export const registerUser = async (request, response) => {
         
         response.cookie('token', token, {
             httpOnly: true,
-            sameSite: 'strict',
+            sameSite: 'none',
             expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 1 day
             secure: process.env.NODE_ENV === 'production',
         });
@@ -70,7 +70,7 @@ export const SignInUser = async (request, response) => {
         
         response.cookie('token', token, {
             httpOnly: true,
-            sameSite: 'strict',
+            sameSite: 'none',
             expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 1 day
             secure: process.env.NODE_ENV === 'production',
         });
